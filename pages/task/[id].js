@@ -14,8 +14,8 @@ function Index(props) {
     const [url,setUrl]=useState()
     const [bool, setBool] = useState(false)
     
-    useEffect(async() => {
-        await getDataById()
+    useEffect(() => {
+        getDataById()
     }, [state])
 
     

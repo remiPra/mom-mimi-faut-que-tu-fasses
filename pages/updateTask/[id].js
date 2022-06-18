@@ -13,8 +13,8 @@ function Index() {
     const {state} = useContext(Context)
 
 
-    useEffect(async() => {
-        await getDataById()
+    useEffect(() => {
+        getDataById()
     }, [state])
 
     const updateTask =async () => {
