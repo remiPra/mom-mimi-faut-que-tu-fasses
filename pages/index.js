@@ -18,6 +18,8 @@ export default function Home() {
   },[])
    
    const installPwa = () => {
+    console.log('on est dans le service')
+    console.log(window)
     let deferredPrompt
   const addBtn = document.querySelector('.add-button')
   // addBtn.style.display = 'none'
