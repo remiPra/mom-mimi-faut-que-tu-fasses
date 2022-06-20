@@ -6,13 +6,15 @@ const nextConfig = {
 module.exports = nextConfig
 
 const withPWA = require("next-pwa");
-const runtimeCaching = require("next-pwa/cache");
+//const runtimeCaching = require("next-pwa/cache");
 
 module.exports = withPWA({
 	reactStrictMode: true,
 	pwa: {
 		dest: 'public',
-	
+    register:true,
+    skipWaiting:true,
+  
     sw: '/sw.js',
 	
 	}

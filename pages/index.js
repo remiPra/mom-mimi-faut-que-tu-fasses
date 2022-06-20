@@ -14,7 +14,7 @@ export default function Home() {
   }
   useEffect(()=>
   {
-    installPwa()
+    setTimeout(()=>{installPwa()},3000)
   },[])
    
    const installPwa = () => {
