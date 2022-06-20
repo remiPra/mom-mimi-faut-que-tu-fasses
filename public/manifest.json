@@ -4,6 +4,7 @@
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
+    "id": "/",
     "name": "mon-mimi-faut-que-tu-fasses",
     "short_name": "mimi-fasse",
     "description": "application pour que mon mimi fasse",
