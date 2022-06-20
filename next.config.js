@@ -11,12 +11,9 @@ const runtimeCaching = require("next-pwa/cache");
 module.exports = withPWA({
 	reactStrictMode: true,
 	pwa: {
-		dest: "public",
-		register: true,
-		skipWaiting: true,
-		runtimeCaching,
-    disable: process.env.NODE_ENV === "development",
-    sw: '/swj.js',
-		buildExcludes: [/middleware-manifest.json$/]
+		dest: 'public',
+	
+    sw: '/sw.js',
+	
 	}
 });
