@@ -11,18 +11,21 @@ function Index() {
     const [description, setDescription] = useState();
     const [date, setDate] = useState();
     const [action, setAction] = useState();
+    const [photoName,setPhotoName] = useState()
     const router = useRouter()
     const [percent,setPercent] = useState()
     const addTask = async () => {
+        setPhotoName(Date.now())
         // Add a new document with a generated id.
         console.log(dbs);
         console.log(collection(dbs, "factures"));
-        const storageRef = ref(storage, `/files/${title}.jpg`)
+        const storageRef = ref(storage, `/files/${photoName}.jpg`)
         await addDoc(collection(dbs , "factures"), {
             title: title,
             description: description,
             date: date,
-            action: action
+            action: action,
+            photoName:photoName
         })
         const uploadTask = uploadBytesResumable(storageRef, fileZ);
         await  uploadTask.on(

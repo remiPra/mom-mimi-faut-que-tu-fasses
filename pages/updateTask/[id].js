@@ -23,7 +23,8 @@ function Index() {
             title:data.title,
             description:data.description,
             date:data.date,
-            action:data.action
+            action:data.action,
+            photoName:data.photoName
           });
           Router.push('/')
     }
