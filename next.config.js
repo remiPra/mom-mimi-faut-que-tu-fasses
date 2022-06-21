@@ -13,6 +13,6 @@ module.exports = withPWA({
 		skipWaiting: true,
 		runtimeCaching,
 		disable: process.env.NODE_ENV === "development",
-		sw:"service-worker.js"
+	
 	}
 });
