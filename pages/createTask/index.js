@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useState } from 'react'
 import { addDoc, collection } from 'firebase/firestore';
 import { dbs,storage } from '../../firebase/index';
 
 import {useRouter} from 'next/router'
 import {  getDownloadURL, ref, uploadBytes, uploadBytesResumable  } from "firebase/storage";
+import { Context } from '../../context';
 
 function Index() {
     const [title, setTitle] = useState();
@@ -14,7 +15,15 @@ function Index() {
     const [photoName,setPhotoName] = useState()
     const router = useRouter()
     const [percent,setPercent] = useState()
+
+    const {state,dispatch} = useContext(Context)
+
+    useEffect(()=> {
+        dispatch("LOADING_FALSE")
+    },[])
+
     const addTask = async () => {
+        dispatch("LOADING_TRUE")
         setPhotoName(Date.now())
         // Add a new document with a generated id.
         console.log(dbs);
@@ -46,6 +55,7 @@ function Index() {
                 });
             }
         ); 
+        dispatch('LOADING_FALSE')
         router.push('/')
     }
     const [fileZ,setFile]=useState();

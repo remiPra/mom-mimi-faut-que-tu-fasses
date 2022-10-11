@@ -12,6 +12,9 @@ function Navbar() {
         <Link href={'/createTask'} passHref={true}>
         <a className="p-2 text-dark" href="#">Taches</a>
         </Link>
+        <Link href={'/createTask'} passHref={true}>
+        <a className="p-2 text-dark" href="#">Factures</a>
+        </Link>
         <Link href={'/'} passHref={true}>
         <a className="p-2 text-dark" href="#">Creer</a>
         </Link>

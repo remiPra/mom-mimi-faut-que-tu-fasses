@@ -5,6 +5,10 @@ const reducer = (state,action) => {
     switch(action.type){
         case "GET_FACTURES" :
             return{...state,factures:action.payload }
+        case "LOADING_TRUE" :  
+            return{...state,loading:true }
+        case "LOADING_FALSE" :  
+            return{...state,loading:false }
         default :
             return state;
     }
@@ -12,6 +16,7 @@ const reducer = (state,action) => {
 
 const initialState={
     factures:[],
+    loading:false
     
 }
 

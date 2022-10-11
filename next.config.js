@@ -1,6 +1,6 @@
 module.exports = {
 	reactStrictMode: true,
-	webpack5: false,
+	
 	async headers() {
 	  return [
 		{
@@ -20,9 +20,11 @@ module.exports = {
   const widthPWA = require("next-pwa");
   module.exports = widthPWA({
 	pwa: {
-	  dest:"public",
-	  register:true,
-	  skipWaiting:true,
+		disable: process.env.NODE_ENV === 'development',
+		// dest: 'public', // comment out this line
+		register: true,
+		sw: '/sw.js'
+	
 	},
   })
   
